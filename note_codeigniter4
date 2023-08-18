@@ -1,6 +1,27 @@
 Instalasi framework CodeIgniter 4 (4.3.7)
-1. Melalui composer
-2. Manual
+
+1. proses instalasi bisa menggunakan composser dan manual
+2. local developvent server
+3. minimal php versi 7.2
+4. struktur direktori tidak sama dengan CI versi sebelumnya
+5. sudah menganut namespace
+6. memiliki autoloading
+7. memiliki file .ENV
+8. memiliki CLI (command Line INteface)
+9. Memiliki fitur REST
+10. Dokumentasi
+
+* PRE- REQUISITE  *
+  + PHP DASAR
+  + Object Oriented PHP
+  + MVC
+  + CodeIgniter 3?
+
+* System requirment
+  1. PHP 7.2 ++
+  2. Intl Extension & mbstring extension
+  3. libcurl  : mode SSL
+  4. MySql 5.1++, MariaDB
 
 * Instalasi CodeIgniter 4 melalui composer
 
