@@ -23,6 +23,15 @@ Instalasi framework CodeIgniter 4 (4.3.7)
   3. libcurl  : mode SSL
   4. MySql 5.1++, MariaDB
 
+Code Editor VSC
+Comppser --> https://getcomposer.org/ ,...  https://packagist.org/
+Git Bash --> https://git-scm.com/ 2.26.2 , https://github.com/git-for-windows
+
+Plugin Pre-Requiste Visual Studio Code (VSC)
+ -Intelephense
+ -Prettier
+ -Snippet
+
 * Instalasi CodeIgniter 4 melalui composer
 
 * Prequiset
