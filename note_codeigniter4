@@ -1,0 +1,19 @@
+Instalasi framework CodeIgniter 4 (4.3.7)
+1. Melalui composer
+2. Manual
+
+* Instalasi CodeIgniter 4 melalui composer
+
+* Prequiset
+  - Composer 2.0.14 or later.
+  - Git
+  - Web Server (Xampp)
+
+  * Proses Instalasi
+
+    - Buka folder kerja htdoc (xampp) dengan menggunakan command dari Git Bash
+    - composer create-project codeigniter4/appstarter [project-root] [--no-dev]
+      [project-root] - folder yang nanti akan ditempatkan download dari codeigniter4
+      [--no-dev]  - tanpa fitur testing
+    - masih dalam layar Git bash, jalankan server dengan perintah "php spark serve" dan untuk menonaktifkan server klik kombinasi ctrl+c pada windows
+    - secara default server dapat dipanggil dengan mengetik http://localhost:8080
