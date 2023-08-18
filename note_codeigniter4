@@ -47,3 +47,13 @@ Plugin Pre-Requiste Visual Studio Code (VSC)
       [--no-dev]  - tanpa fitur testing
     - masih dalam layar Git bash, jalankan server dengan perintah "php spark serve" dan untuk menonaktifkan server klik kombinasi ctrl+c pada windows
     - secara default server dapat dipanggil dengan mengetik http://localhost:8080
+
+Setup file env
+ * copy file env dan selanjutnya paste
+ * Rename file env-copy menjadi .env
+
+file .env adalah file konfigurasi pengaturan dari framework codeigniter 4
+
+Konfig pertama kali file
+ * CI_ENVIRONMENT = development
+ * app.baseURL = 'http://localhost:8080'  -> sesuaikan kondisi framework diInstal
