@@ -1,0 +1,50 @@
+CodeIgniter4-DataTables Library [Hermawan]
+
+link => https://www.hermawan.dev/project/codeigniter4-datatables-library.html
+documentation => https://codeigniter4-datatables.hermawan.dev/usage/basic/
+
+* Requirements *
+ - CodeIgniter 4.x
+ - jQuery DataTables v1.10.x
+
+* Instalasi dengan komposer composer [Rekomendasi]*
+
+composer require hermawan/codeigniter4-datatables
+
+
+* Instalasi Manual [Optional]*
+ 1. Download Repository DataTables => https://github.com/hermawanramadhan/CodeIgniter4-DataTables
+ 2. Extrak dan Ubah nama folder menjadi codeigniter4-datatables
+ 3. download library php-sql-parser [Link : https://github.com/greenlion/PHP-SQL-Parser]
+ 4. Extrak dan Ubah nama folder menjadi php-sql-parser
+ 5. kemudian pindahkan folder codeigniter4-datatables dan php-sql-parser ke folder ThirdParty CodeIgniter. 
+ 6. Buka File app/Config/Autoload.php
+ 7. Tambahkan pada parameter array $psr4, menjadi
+$psr4 = [
+	     APP_NAMESPACE => APPPATH, // For custom app namespace
+	     'Config'      => APPPATH . 'Config',
+	     'PHPSQLParser'          => APPPATH .'ThirdParty/php-sql-parser/src/PHPSQLParser', // <-- namespace for php-sql-parser
+	     'Hermawan\DataTables'   => APPPATH .'ThirdParty/codeigniter4-datatables/src', // <-- namespace for this library
+	];
+
+
+* Exammple Cotroller  *
+	use \Hermawan\DataTables\DataTable;
+
+	public function ajaxDatatable()
+	{
+	    $db = db_connect();
+	    $builder = $db->table('customers')->select('customerNumber, customerName, phone, city, country, postalCode');
+
+	    return DataTable::of($builder)->toJson();
+	}
+
+* javascript *
+
+	$(document).ready(function() {
+	    $('#table').DataTable({
+	        processing: true,
+	        serverSide: true,
+	        ajax: '<?php echo site_url('customers/ajaxDatatable'); ?>'
+	    });
+	});
