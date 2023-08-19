@@ -57,3 +57,13 @@ file .env adalah file konfigurasi pengaturan dari framework codeigniter 4
 Konfig pertama kali file
  * CI_ENVIRONMENT = development
  * app.baseURL = 'http://localhost:8080'  -> sesuaikan kondisi framework diInstal
+
+* Konfigurasi Database Ci4 *
+edit file .env, hilangkan tanda kommentar dan ubah sesuai dengan konfigurasi ke database
+  database.default.hostname = ''
+  database.default.database = ''
+  database.default.username = ''
+  database.default.password = ''
+  database.default.DBDriver = MySQLi
+  # database.default.DBPrefix =
+  database.default.port = 3306
