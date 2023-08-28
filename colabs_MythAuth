@@ -1,0 +1,66 @@
+Login system CodeIgniter 4 & Library Myth Outh
+
+requirement 
+Library Myth Auth => https://github.com/lonnieezell/myth-auth
+Php 7.2+, 8.0+
+CodeIgniter 4.1(4.3.7)
+
+* Features 
+-> Login & Registrasi
+* RBAC Role Base Access Control
+  -> User Access Level
+  -> Role Management
+  -> User Management
+  -> User Activation
+
+Instalasi -> Composer
+> composer require myth/auth
+
+Configuration
+1. Ubah app/Config/Email.php tentukan a "fromName" dan "fromEmail" untuk mengirim email password reset, etc.
+2. Menambahkan ruleSet, dengan mengubah app/Config/Validation.php dan tambahkan value 
+   * tambahkan namespace Myth\Auth\Authentication\Password\ValidationRules
+   * Menambahkan kedalam array $ruleSets, ValidationRules::class
+3. Pastikan koneksi database, jalankan Auth migrations
+   > php spark migrate -all
+
+
+* Routes, didefiniskan didalam folder Auth's Config/Routes.php,
+[Folder_Public]\vendor\myth\auth\src\Config\Routes.php
+
+
+* Untuk Views sudah didukung berbasis bootstrap 4
+
+* Restricting by Route
+  Kita bisa menentukan konfigurasi route pada file app/Config/Route.php, memberikan permission dan restrict access to users by group/role dengan Controller Filters
+ 1. Ubah dan tambahkan paramerter "aliases" property pada file application/Config/Filters.php :
+menambahkan nameSpaces
+ -> use Myth\Auth\Filters\LoginFilter;
+ -> use Myth\Auth\Filters\RoleFilter;
+ -> use Myth\Auth\Filters\PermissionFilter;
+Menambahkan kedalam array $aliases
+ 'login'         => LoginFilter::class,
+ 'role'          => RoleFilter::class,
+ 'permission'    => PermissionFilter::class,
+
+
+Restrictions, masih pada file yang sama application/Config/Filters.php
+* Global Route, konfigurasi parameter array $globals keys before
+  1. Aktifkan parameter honeypot
+  2. tambahkan value login
+* Jika hanya beberapa cotroller saja, ubah/tambahkan parameter 
+  $filters =[
+   'login' => ['before' => ['dashboard/*']],
+]
+
+* Singgle Route
+
+
+* Registrasi/Menambah Users untuk pertama kali
+  -> Menonaktifkan fitur Activation
+     * Membuka file [Folder_Public]\vendor\myth\auth\src\Config\Auth.php
+     * Ubah parameter $requireActivation = 'false'
+     * Ubah parameter $activeResetter = 'false'.
+  -> Lakukan Proses registrasi
+
+Sebagai tambahan informasi, Jika dirasa proses registrasi/create akun users pertama kali sudah selesai dilakukan, sebagai opsi ubah parameter $allowRegistration menjadi "false" ini dilakukan pembuatan akun users ditambahkan sebelumnya.
