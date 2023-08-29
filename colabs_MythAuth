@@ -55,12 +55,12 @@ Restrictions, masih pada file yang sama application/Config/Filters.php
 
 * Singgle Route
 
-
-* Registrasi/Menambah Users untuk pertama kali
+Registrasi / Create Users pertama kali setelah proses instalasi.
+Menggunakan fitur Register
   -> Menonaktifkan fitur Activation
      * Membuka file [Folder_Public]\vendor\myth\auth\src\Config\Auth.php
-     * Ubah parameter $requireActivation = 'false'
-     * Ubah parameter $activeResetter = 'false'.
-  -> Lakukan Proses registrasi
+     * Ubah parameter $requireActivation = null
+     * Ubah parameter $activeResetter = null
+  -> Lakukan Proses registrasi dengan mengklik "Need an Account".
 
-Sebagai tambahan informasi, Jika dirasa proses registrasi/create akun users pertama kali sudah selesai dilakukan, sebagai opsi ubah parameter $allowRegistration menjadi "false" ini dilakukan pembuatan akun users ditambahkan sebelumnya.
+Untuk menonaktifkan form Registrasi, ubah paramater $allowRegistration = false maka proses pembuatan akun users dilakukan pada halaman sendiri
