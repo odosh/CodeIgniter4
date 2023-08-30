@@ -81,5 +81,16 @@ Registrasi / Create Users pertama kali setelah proses instalasi.
     ],
 3. Melakukan penambahan disisi DBMS menggunakan command line atau aplikasi DBMS client (PHPMyAdmin).
 
+Custom views Myth Auth [login page template SB Admin ]
+
+=> buat folder didalam folder Views dengan nama folder auth
+=> buat file login.php
+=> buka file [folder_ci4]\vendor\myth\auth\src\Views\login.php
+=> Sesuaikan kode dan function dengan login.php versi Custom 
+
+Lanjut myth Auth
+
+=> Group & Permissions
+
 Untuk menonaktifkan form Registrasi, ubah paramater $allowRegistration = false maka proses pembuatan akun users dilakukan pada halaman sendiri
 Catatan, Generate Dummy database https://filldb.info/
