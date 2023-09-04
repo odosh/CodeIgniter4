@@ -90,7 +90,22 @@ Custom views Myth Auth [login page template SB Admin ]
 
 Lanjut myth Auth
 
-=> Group & Permissions
+User List & Profile
+
+pre-requisite
+INSERT INTO `db_example`.`auth_groups` (`id`, `name`, `description`) VALUES (NULL, 'admin', 'Mengelola Semua akun'), (NULL, 'General', 'Akun profile Users');
+INSERT INTO `db_example`.`auth_groups_users` (`group_id`, `user_id`) VALUES ('1', '21'), ('2', '1');
+
+=> User list
+
+  -> create folder admin dalam folder Cotroller
+  -> create file admin.php
+  -> buat namespace $users_list = new /Myth/Auth/Models\UserModel
+  -> Query data users dengan fungsi findAll()
+  -> view tampil, uname:email:Role:status aktif
+  -> create query builder CI4 (note Prevent for Sql Injection Protection)
+  ->join ('auth_groups_users','auth_groups_users.user_id = users.id');
+  ->join ('auth_groups', 'auth_groups.id = auth_groups_users.group_id');
 
 Untuk menonaktifkan form Registrasi, ubah paramater $allowRegistration = false maka proses pembuatan akun users dilakukan pada halaman sendiri
 Catatan, Generate Dummy database https://filldb.info/
