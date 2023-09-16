@@ -67,3 +67,21 @@ edit file .env, hilangkan tanda kommentar dan ubah sesuai dengan konfigurasi ke 
   database.default.DBDriver = MySQLi
   # database.default.DBPrefix =
   database.default.port = 3306
+
+development
+
+CI_VERSION = '4.4.1';
+
+Instal codeigniter with version
+
+composer create-project codeigniter4/appstarter:4.1.9 project-name
+
+[Show Instaled packages]
+composer show --installed
+[Uninstall Composer-installed packages]
+composer remove my-package
+exp:composer remove phpunit/phpunit
+[Update composer lock file]
+composer update --lock
+
+refrences : https://linux.how2shout.com/remove-a-package-from-php-composer/
