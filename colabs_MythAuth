@@ -1,4 +1,4 @@
-Login system CodeIgniter 4 & Library Myth Outh
+Login system CodeIgniter 4 & Library Myth Auth
 
 requirement 
 Library Myth Auth => https://github.com/lonnieezell/myth-auth
@@ -89,7 +89,6 @@ Custom views Myth Auth [login page template SB Admin ]
 => Sesuaikan kode dan function dengan login.php versi Custom 
 
 Lanjut myth Auth
-
 User List & Profile
 
 pre-requisite
@@ -97,7 +96,6 @@ INSERT INTO `db_example`.`auth_groups` (`id`, `name`, `description`) VALUES (NUL
 INSERT INTO `db_example`.`auth_groups_users` (`group_id`, `user_id`) VALUES ('1', '21'), ('2', '1');
 
 => User list
-
   -> create folder admin dalam folder Cotroller
   -> create file admin.php
   -> buat namespace $users_list = new /Myth/Auth/Models\UserModel
