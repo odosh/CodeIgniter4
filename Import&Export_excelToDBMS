@@ -1,0 +1,17 @@
+Import & Export thirdParty excel to database
+
+prequisite
+
+-> PhpSpreadsheet - [Documentation]https://phpspreadsheet.readthedocs.io/en/latest/
+-> PHP 8.0 Minimum
+
+------ Instalasi ------
+Use Composer
+
+-> [command] composer require phpoffice/phpspreadsheet
+-> create namespace 
+
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx; untuk membuat file excel
+use PhpOffice\PhpSpreadsheet\Reader\Xlsx; // libary dungungan membaca file berextensi Xlsx
+use PhpOffice\PhpSpreadsheet\Reader\Xls; // libary dungungan membaca file berextensi Xls
